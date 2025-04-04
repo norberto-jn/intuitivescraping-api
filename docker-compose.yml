@@ -1,0 +1,36 @@
+version : '3'
+
+networks:
+  default:
+    driver: bridge
+
+services :
+
+  intuitivescraping-api :
+    build:
+      context: ./intuitivescraping-api
+      dockerfile: Dockerfile.dev
+    container_name: intuitivescraping-api
+    restart: always
+    volumes:
+      - ./intuitivescraping-api/:/usr/src/workspace/intuitivescraping-api
+    ports:
+      - 3001:3001
+    command: > 
+      sh -c "
+      python /usr/src/workspace/intuitivescraping-api/download_attachments.py && 
+      python /usr/src/workspace/intuitivescraping-api/create_zip_from_attachments.py && 
+      python /usr/src/workspace/intuitivescraping-api/extract_and_save_tables_from_pdf.py && 
+      python ./src/main.py
+      "
+
+  intuitivescraping-ui :
+    build:
+      context: ./intuitivescraping-ui
+      dockerfile: Dockerfile.dev
+    container_name: intuitivescraping-ui
+    restart: always
+    volumes:
+      - ./intuitivescraping-ui/:/usr/src/workspace/intuitivescraping-ui
+    ports:
+      - 5173:5173
