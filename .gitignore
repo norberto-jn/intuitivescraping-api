@@ -1,0 +1,45 @@
+# Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Ambientes virtuais
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Arquivos de dependências
+*.pdb
+*.egg-info/
+dist/
+build/
+*.tar.gz
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*.bak
+*.swp
+*.tmp
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Teste de cobertura
+.coverage
+coverage.xml
+*.cover
+*.hypothesis/
+
+/src/file/csvs/*.csv
+/src/file/zips/*.zip
+/src/file/attachments/*.pdf
