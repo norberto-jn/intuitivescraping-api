@@ -9,9 +9,9 @@ Ao executar o comando docker compose up -d, são iniciados dois containers: um p
    ```bash
     command: > 
       sh -c "
-      python /usr/src/workspace/scraping-api/download_attachments.py && 
-      python /usr/src/workspace/scraping-api/create_zip_from_attachments.py && 
-      python /usr/src/workspace/scraping-api/extract_and_save_tables_from_pdf.py && 
+      python /usr/src/workspace/intuitivescraping-api/download_attachments.py && 
+      python /usr/src/workspace/intuitivescraping-api/create_zip_from_attachments.py && 
+      python /usr/src/workspace/intuitivescraping-api/extract_and_save_tables_from_pdf.py && 
       python ./src/main.py
       "
    ```

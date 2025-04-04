@@ -38,10 +38,10 @@ class FileManager:
     @staticmethod
     def compress_csv_files_to_zip(name: str):
         try:
-            zip_filename = Path("/usr/src/workspace/scraping-api/src/file/zips") / f"{FileManager.format_name(name)}.zip"
+            zip_filename = Path("/usr/src/workspace/intuitivescraping-api/src/file/zips") / f"{FileManager.format_name(name)}.zip"
             zip_filename.parent.mkdir(parents=True, exist_ok=True)
 
-            csv_directory = Path("/usr/src/workspace/scraping-api/src/file/csvs")
+            csv_directory = Path("/usr/src/workspace/intuitivescraping-api/src/file/csvs")
             if not csv_directory.exists():
                 raise FileNotFoundError(f"O diretório {csv_directory} não foi encontrado.")
             

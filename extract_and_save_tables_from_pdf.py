@@ -20,6 +20,11 @@ def convert_to_description(value):
         return value
 
 def extract_and_save_tables_from_pdf() :
+        
+        csvs_folder = "./src/file/csvs"
+        
+        os.makedirs(csvs_folder, exist_ok=True)
+
         try:
             os.chdir(os.path.dirname(os.path.abspath(__file__)))
             with pdfplumber.open("./src/file/attachments/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf") as pdf:
